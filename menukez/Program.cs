@@ -14,7 +14,7 @@ namespace menukez
             nevek.Add("Kiss István");
             nevek.Add("Nagy elemér");
             nevek.Add("kissándorjózsef23");
-            nevek.Add("Tóth# Ilona");
+            nevek.Add(" Tóth# Ilona");
             nevek.Add("Szabó Kornél");
             while (true)
             {
@@ -41,11 +41,26 @@ namespace menukez
                 }
                 else if (valasz == "2")
                 {
-                    return;
+                    Console.Clear();
+                    foreach (string nev in nevek)
+                    {
+                        string[] darabok = nev.TrimStart().Split(' ');
+                        bool jo = true;
+                        foreach (string nevdarab in darabok)
+                        {
+                            if (!char.IsUpper(nevdarab.TrimStart()[0]))
+                                jo = false;
+                        }
+                        if (jo)
+                        {
+                            Console.WriteLine(nev.TrimStart());
+                        }
+                            
+                    }
                 }
                 else if (valasz == "3")
                 {
-                    return;
+                    
                 }
                 else if (valasz == "4")
                 {
