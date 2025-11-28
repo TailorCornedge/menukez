@@ -98,11 +98,40 @@ namespace menukez
                 }
                 else if (valasz == "5")
                 {
-                    return;
+                    foreach (var nev in nevek)
+                    {
+                        if (nev.Contains(" "))
+                        {
+                            Console.WriteLine(nev);
+                        }
+                    }
                 }
                 else if (valasz == "6")
                 {
-                    return;
+                    Console.Clear();
+                    foreach (var nev in nevek)
+                    {
+                        //csak betűk
+                        bool jo = true;
+                        foreach (char betu in nev)
+                        {
+                            if (!(char.IsLetter(betu) || betu == ' '))
+                            {
+                                jo = false;
+                            }
+                        }
+                        //Nagybetűvizsgálat
+                        string[] darabok = nev.TrimStart().Split(' ');
+                        foreach (string nevdarab in darabok)
+                        {
+                            if (!char.IsUpper(nevdarab.TrimStart()[0]))
+                                jo = false;
+                        }
+                        if (jo)
+                        {
+                            Console.WriteLine(nev);
+                        }
+                    }
                 }
                 else
                 {
