@@ -33,7 +33,11 @@ namespace menukez
                 }
                 else if (valasz == "1")
                 {
-                    //1
+                    Console.Clear();
+                    foreach (string nev in nevek)
+                    {
+                        Console.WriteLine(nev.TrimStart());
+                    }
                 }
                 else if (valasz == "2")
                 {
